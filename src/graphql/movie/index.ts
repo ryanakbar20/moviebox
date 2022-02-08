@@ -5,11 +5,23 @@ const GET_MOVIES = gql`
     allFilms {
       films {
         title
-        created
+        releaseDate
         id
       }
     }
   }
 `;
 
-export { GET_MOVIES };
+const GET_DETAIL_MOVIE = gql`
+  query GetDetailFilms($id: ID!) {
+    film(id: $id) {
+      id
+      title
+      releaseDate
+      director
+      openingCrawl
+    }
+  }
+`;
+
+export { GET_MOVIES, GET_DETAIL_MOVIE };
