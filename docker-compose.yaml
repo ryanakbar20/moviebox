@@ -1,0 +1,8 @@
+services:
+  moviebox:
+    image: moviebox:1.0.0
+    build:
+      context: .
+    container_name: moviebox
+    ports:
+      - "8080:80"
